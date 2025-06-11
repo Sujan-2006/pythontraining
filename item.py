@@ -8,13 +8,27 @@ class Item:
         assert price>=0,f"price {price} is not valid"
         assert quantity>=0,f"quantity {quantity} is not valid"
        
-        self._name=name        #assigning to self object
+        self.__name=name        #assigning to self object
         self.price=price 
         self.quantity=quantity
 
         Item.all.append(self)
+    
+    @property         #property decorator =read _only atttribute
+    def name(self):
+        print("blaahhhhhh")  #this will be printed when we access the name attribute
+        return self.__name
+    
+    @name.setter     #we can rewrite the value of the name
+    def name(self,val):
+        if len(val)>5:
+            raise Exception("looooonngggg")
 
-  
+        #print("ooooooooOOOOO")  #THIS WILL BE PRINTED FIRST WHEN WE SET THE VALUE TO THE ATTRIBUTE
+        self.__name=val
+
+    
+
     def calculate(self):
        return self.price*self.quantity
     
