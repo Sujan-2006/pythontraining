@@ -42,7 +42,7 @@ class item:
             return False
  
     def __repr__(self):
-        return f"item({self.name}, {self.price}, {self.quantity})"   #way to print all our instances with it's values 
+        return f"{self.__class__.__name__}({self.name}, {self.price}, {self.quantity})"   #way to print all our instances with it's values 
     
 item.instantiate_from_csv()  #this will call the class method to instantiate from csv file
 print(item.all)
@@ -55,7 +55,6 @@ print(item.is_integer(7))
 
 class food(item):
 
-    all=[]
     def __init__(self,name:str,price:float,quantity=0,spoiledfood=0):
 
         #call to super function to have access to all attributes/methods
@@ -68,11 +67,8 @@ class food(item):
       
         self.spoiledfood=spoiledfood
 
-        food.all.append(self)
 f1=food("burger",200,5,1)
 print(f1.calculate())
-
-
 
 print(item.all)
 print(food.all)
