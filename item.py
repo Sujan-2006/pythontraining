@@ -26,7 +26,7 @@ class Item:
     
     @property         #property decorator =read _only atttribute
     def name(self):
-        print("blaahhhhhh")  #this will be printed when we access the name attribute
+        #print("blaahhhhhh")  #this will be printed when we access the name attribute
         return self.__name
     
     @name.setter     #we can rewrite the value of the name
@@ -69,10 +69,22 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.__price}, {self.quantity})"   #way to print all our instances with it's values 
     
-    @property
-    def read_only_name(self):
-        return "SUJAN"
-    
+
+    def __connect(self,server):
+        pass
+    def __body(self):
+        return f"""
+        hi, i am SUJAN!
+        we have {self.name}{self.quantity} in stock
+        """
+    def __send(self):
+        pass
+
+    def mail(self):
+        self.__connect('')
+        self.__body()
+        self.__send()
+       
 Item.instantiate_from_csv()  #this will call the class method to instantiate from csv file
 
     
