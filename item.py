@@ -9,10 +9,20 @@ class Item:
         assert quantity>=0,f"quantity {quantity} is not valid"
        
         self.__name=name        #assigning to self object
-        self.price=price 
+        self.__price=price 
         self.quantity=quantity
 
         Item.all.append(self)
+
+    @property
+    def price(self):
+        return self.__price
+
+    def discount(self):
+        self.__price=self.__price * self.offrate    #initial item then self for offrate to access it from the class level
+
+    def increment(self,increval):
+        self.__price=self.__price + self.__price*increval
     
     @property         #property decorator =read _only atttribute
     def name(self):
@@ -30,10 +40,8 @@ class Item:
     
 
     def calculate(self):
-       return self.price*self.quantity
-    
-    def discount(self):
-        self.price=self.price * self.offrate    #initial item then self for offrate to access it from the class level
+       return self.__price*self.quantity
+
 
     @classmethod   #class method
     def instantiate_from_csv(cls):
@@ -59,7 +67,7 @@ class Item:
  
  
     def __repr__(self):
-        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"   #way to print all our instances with it's values 
+        return f"{self.__class__.__name__}('{self.name}', {self.__price}, {self.quantity})"   #way to print all our instances with it's values 
     
     @property
     def read_only_name(self):
