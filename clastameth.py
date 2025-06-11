@@ -69,7 +69,6 @@ class Food(Item):
 
       
 
-
 f1=Food("burger",500,5,1)
 print(f1.calculate())
 
