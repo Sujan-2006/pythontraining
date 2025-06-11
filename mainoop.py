@@ -1,5 +1,5 @@
 from food import Food
-
-i1=Food("pizza",500,3)
-i1.increment(0.2)
+from PMJfood import Jfood
+i1=Jfood("Burger",500,2)
+i1.discount()
 print(i1.price)
