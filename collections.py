@@ -1,12 +1,10 @@
-items=[["phone","charger","wire"],
-       ["pizza","burger","dosa","idly"],
-       ["pen","pencil","waterbottle"]]
+#telephone number pad program
 
-print(items[0][2])
-
-for i in items:
+a=((1,2,3),
+   (4,5,6),
+   (7,8,9),
+   ("*",0,"#"))
+for i in a:
     for j in i:
         print(j,end=" ")
     print()
-
-#we can also use this for set within set or tuple with in a tuple or a set with in a tuple
