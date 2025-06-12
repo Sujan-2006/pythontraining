@@ -1,9 +1,7 @@
-t=-5
-sunny=True
-if t>=28 and sunny:
-    print("it is hot outside")
-elif t<=0 or not sunny:
-    print("it is cold outside")
-else:
-    print("it is moderate outside")
-     
+age=int(input())
+print("You are an adult" if age >= 18 else "You are a minor")
+a=5
+b=9
+max=a if a > b else b
+min=a if a < b else b
+print(max,min)
