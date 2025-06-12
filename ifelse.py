@@ -1,16 +1,16 @@
-age=int(input())
-if age>=18:
-    print("eligible")
-elif age<=0:
-    print("not born")
+op=input("enter an operator(+,-,*,/,%):")
+n1=float(input("enter value 1:"))
+n2=float(input("enter value 2:"))
+if op=='+':
+    print(n1+n2)
+elif op=='-':
+    print(n1-n2)
+elif op=='*':
+    print(n1*n2)
+elif op=='/':
+    print(n1/n2)
+elif op=='%':
+    print(n1%n2)
 else:
-    print("not eligible")
+    print("illegal operator")
 
-
-student=False
-if student:
-    print("you are a student")
-else:
-    print("you are not a student")
-
- 
