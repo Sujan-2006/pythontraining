@@ -1,16 +1,5 @@
-class laptop:
-    def __init__(self):
-        self.ram=""
-        self.processor=""
-    def display(self):
-        print("ram:",self.ram)
-        print("processor:",self.processor)
-hp=laptop()
-dell=laptop()
-hp.ram="16gb"
-hp.processor="i5"
-dell.ram="8gb"
-dell.processor="i7"
-hp.display()
-dell.display()
-
+n=input("enter your name:")
+while n=="":
+    print("no name entered")
+    n=input("enter your name:")     #if  ot given then it will be an infinite loop
+print("Hello",n)
