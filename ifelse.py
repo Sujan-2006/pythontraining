@@ -1,11 +1,16 @@
-a=[]
-for i in range(10):
-        b=int(input())
-        a.append(b)
-sum=0
-for i in a:
-    sum+=i
-print(sum/10)    
+age=int(input())
+if age>=18:
+    print("eligible")
+elif age<=0:
+    print("not born")
+else:
+    print("not eligible")
 
+
+student=False
+if student:
+    print("you are a student")
+else:
+    print("you are not a student")
 
  
