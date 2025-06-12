@@ -15,8 +15,6 @@ print(math.sqrt(x))
 print(math.ceil(x))
 print(math.floor(z))
 
-
-
 r=int(input("enter radius:"))
 circumference=2*math.pi*r
 area=math.pi*pow(r,2)

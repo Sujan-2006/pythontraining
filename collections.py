@@ -1,23 +1,12 @@
-#shopping cart program
+items=[["phone","charger","wire"],
+       ["pizza","burger","dosa","idly"],
+       ["pen","pencil","waterbottle"]]
 
-electronics=[]
-prices=[]
-totamount=0
+print(items[0][2])
 
-while True:
-    elec=input("enter an item you need to buy(Q to quit):")
-    if elec=="Q":
-        break
-    else:
-        price=float(input("enter the price of {elec}:"))
-        electronics.append(elec)
-        prices.append(price)
+for i in items:
+    for j in i:
+        print(j,end=" ")
+    print()
 
-print("-----YOUR CART-----")
-for elec in electronics:
-    print(elec)
-
-for price in prices:
-    totamount+=price
-
-print(f"Your total BILL amount is rupees {totamount:.2f}")
+#we can also use this for set within set or tuple with in a tuple or a set with in a tuple
