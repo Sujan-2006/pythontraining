@@ -1,13 +1,11 @@
-n="sujan is a good boy"
-#r=len(name)
-#r=n.rfind("z")
-#n=n.capitalize()
-#n=n.upper()
-#n=n.lower()
-#n=n.title()
-#n=n.replace("sujan","sujan kumar")
-#n=n.isalpha()
-#n=n.isdigit()
-r=n.count("o")
+n=input("enter the use name:")
 
-print(r)
+if(len(n)>12):
+    print("name cannot be more than 12 characters")
+elif not n.find(" ")==-1:
+    print("name cannot contain space")
+elif not n.isalnum():
+    print("name cannot contain numbers")
+else:
+    print("name is valid")
+
