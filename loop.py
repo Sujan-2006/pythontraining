@@ -1,10 +1,7 @@
-#for loop
-
-
-for i in range(1,10):
-    if i == 5:
-        break
-    else:
-        print(i)
-
-    
+r=int(input("enter the rows:"))
+c=int(input("enter the columns:"))
+sign=input("enter any symbol:")
+for i in range(r):
+    for j in range(c):
+        print(sign,end=" ")
+    print()
