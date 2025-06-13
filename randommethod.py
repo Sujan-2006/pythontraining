@@ -1,21 +1,19 @@
 import random
 options=("rock","paper","scissors")
 
-running=True
 
-while running:
-
-    player=None
+while True:
+    player=input("enter your choice(rock/paper/scissors)(q to quit):")
+    if player=='q':
+        break
     comp=random.choice(options)
 
-    while player not in options:
-        player=input("enter your choice(rock/paper/scissors):")
+       
     print(f"player: {player}")
     print(f"computer: {comp}")
-
+    
     if player==comp:
         print("tie")
-
     elif player=="paper" and comp=="rock":
         print("win!")
     elif player=="rock" and comp=="scissors":
@@ -25,8 +23,6 @@ while running:
     else:
         print("you lost!!")
 
-    playing=input("do you waant to play_again?(y/n):").lower()
-    if not playing=="y":
-        running=False
+
 print("Thanks for playing")
  
