@@ -1,29 +1,32 @@
 import random
-low=1
-high=10
-guesses=0
+options=("rock","paper","scissors")
+
 running=True
-ans=random.randint(low,high)
 
-print("NUMBER GUESSING GAME")
 while running:
-    guess=input("enter the guess:")
-    if guess.isdigit():
-        guess=int(guess)
-        guesses+=1
 
-        if guess<low or guess>high:
-            print("the number you guessed is out of the range")
-            print(f"please guess a number between {low} and {high}")
-        elif guess<ans:
-            print("you are nowhere near!!")
-        elif guess>ans:
-            print("you are away!!")
-        else:
-            print("hurrrahhhh!! you are correct ")
-            print(f"no. of guesses is {guesses}")
-            running=False
+    player=None
+    comp=random.choice(options)
 
+    while player not in options:
+        player=input("enter your choice(rock/paper/scissors):")
+    print(f"player: {player}")
+    print(f"computer: {comp}")
+
+    if player==comp:
+        print("tie")
+
+    elif player=="paper" and comp=="rock":
+        print("win!")
+    elif player=="rock" and comp=="scissors":
+        print("win!")
+    elif player=="scissors" and comp=="paper":
+        print("win!")
     else:
-        print("invalid guess")
-        print(f"please guess a number between {low} and {high}")
+        print("you lost!!")
+
+    playing=input("do you waant to play_again?(y/n):").lower()
+    if not playing=="y":
+        running=False
+print("Thanks for playing")
+ 
