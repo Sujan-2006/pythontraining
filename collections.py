@@ -22,5 +22,4 @@ for game in mycart:
 print()
 print("------------------")
 
-print(f"total amount is Rupees{amount:.2f}")
-
+print(f"total amount is {amount:.2f}")
