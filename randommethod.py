@@ -1,28 +1,58 @@
 import random
-options=("rock","paper","scissors")
+  
+#● ┌ ─ ┐ │ └ ┘        #print("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518")  unicode for the symbols
 
+#   "┌─────────┐","│         │","│         │","│         │","└─────────┘"
 
-while True:
-    player=input("enter your choice(rock/paper/scissors)(q to quit):")
-    if player=='q':
-        break
-    comp=random.choice(options)
+diceart={
+    1:("┌─────────┐",
+       "│         │",
+       "│    ●    │",
+       "│         │",
+       "└─────────┘"),
+    2:("┌─────────┐",
+       "│  ●      │",
+       "│         │",
+       "│      ●  │",
+       "└─────────┘"),
+    3:("┌─────────┐",
+       "│  ●      │",
+       "│    ●    │",
+       "│      ●  │",
+       "└─────────┘"),
+    4:("┌─────────┐",
+       "│  ●   ●  │",
+       "│         │",
+       "│  ●   ●  │",
+       "└─────────┘"),
+    5:("┌─────────┐",
+       "│ ●     ● │",
+       "│    ●    │",
+       "│ ●     ● │",
+       "└─────────┘"),
+    6:("┌─────────┐",
+       "│  ●   ●  │",
+       "│  ●   ●  │",
+       "│  ●   ●  │",
+       "└─────────┘"),
+        }
 
-       
-    print(f"player: {player}")
-    print(f"computer: {comp}")
-    
-    if player==comp:
-        print("tie")
-    elif player=="paper" and comp=="rock":
-        print("win!")
-    elif player=="rock" and comp=="scissors":
-        print("win!")
-    elif player=="scissors" and comp=="paper":
-        print("win!")
-    else:
-        print("you lost!!")
+dice=[]
+total=0
+rolls=int(input("how many times dice rolled?"))
+for die in range(rolls):
+    dice.append(random.randint(1,6))
+print(dice)
+'''
+for die in range(rolls):               #to print the dice vetrically
+    for i in diceart.get(dice[die]):
+        print(i)
+'''
+for i in range(5):
+    for die in dice:                        #to print the dice horizontally
+        print(diceart.get(die)[i],end=" ")
+    print()
 
-
-print("Thanks for playing")
- 
+for die in dice:
+    total+=die
+print(f"total: {total}")
