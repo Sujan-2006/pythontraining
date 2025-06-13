@@ -1,41 +1,26 @@
-anime={"naruto":"hinata",
-       "sasuke":"sakura",
-       "eren":"mikasa",
-       "sanji":"nami"}
-print(dir(anime))
-print(anime.get("sasuke"))
+games={"spider man":1000,
+       "god of war":500,
+       "gta":6000,
+       "fire and water":1500}
+mycart=[]
+amount=0
 
-if anime.get("tanjiro"):
-    print("naruto loves hinata")
-else:
-    print("mc doesn't exist")
+for k,v in games.items():
+    print(f"{k:20}:Rupees {v:.2f}")
 
-
-anime.update({"sanji":"violet"})
-#anime.pop("naruto")
-#anime.popitem()
-#anime.clear()
-
-print(anime)
-#keys=anime.keys()
-#print(keys)
-
-'''
-for k in anime.keys():
-    print(k)
-
-values=anime.values()
-print(values)
-
-for v in anime.values():
-    print(v)
-
-print(anime.items())
-'''
-
-for k,v in anime.items():
-    print(f"{k}:{v}")
-                
+while True:
+    game=input("enter the game you would like to buy(press q to quit):").lower()
+    if game=="q":
+        break
+    elif  games.get(game) is not None:
+        mycart.append(game)
 
 
+for game in mycart:
+    amount+=games.get(game)
+    print(game,end=" ")
+print()
+print("------------------")
+
+print(f"total amount is Rupees{amount:.2f}")
 
