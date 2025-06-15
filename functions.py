@@ -1,9 +1,7 @@
-import time
+def position(greeting,title,f,l):
+    print(f"{greeting} {title}{f} {l}")
+position("hello",l="watson",title="Ms.",f="Emma")          #keyword argument is followed by the positional argument
 
-def count(b,a=0):     #default arguments should follow the previous
-    for i in range(a,b+1):
-        print(i)
-        time.sleep(1)
-    print("happy new year")
-count(10)
-count(15,5)    
+
+for i in range(1,11):                #arguments preceeded by an identifier
+    print(i,end="-")  #keyword argument
