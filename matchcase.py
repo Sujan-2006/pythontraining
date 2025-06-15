@@ -1,20 +1,10 @@
 def week(a):                #alternative of switch case
     match a:
-        case 1:
-            return "sunday"
-        case 2:
-            return "monday"
-        case 3:
-            return "monday"
-        case 4:
-            return "monday"
-        case 5:
-            return "monday"
-        case 6:  
-            return "monday"
-        case 7:
-            return "monday"
-        case _:        # _id used as like default
+        case  "sunday" | "saturday":
+            return "week end"
+        case "monday" | "tuesday" | "wednesday" | "thursday" |"friday":
+            return "not a weekend"
+        case _:
             return "invalid"
-print(week("k"))
+print(week("monday"))
     
