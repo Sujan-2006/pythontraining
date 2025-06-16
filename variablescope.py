@@ -1,10 +1,10 @@
-def ex1():     #enclosed variabl search the variable in local level and if it is not available it searches in the enclosed level
-    print(x)
-def ex2():
-      
-    print(x)
-x=3
-ex1()
-ex2()
+from math import e
+def ex1():     #built in 
+    print(e)
 
- 
+    
+#e=3
+ex1()
+
+
+ #LEGB=local->enclosed->global->built-in
