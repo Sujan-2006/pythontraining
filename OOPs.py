@@ -1,15 +1,18 @@
 class Animal:
-    def eat(self):
-        print("Animals eat!!")
-    
-class Mammal:
-    def sleep(self):
-        print("Mammal sleeps!!")
+    def __init__(self,name):
+        self.name=name
 
-class Dog(Animal,Mammal):
+    def eat(self):
+        print(f"{self.name} is an animals. It eat!!")
+    
+class Mammal(Animal):
+    def sleep(self):
+        print(f"{self.name} is a Mammal. It sleeps!!")
+
+class Dog(Mammal):
     def bark(self):
         print("wooff wooff!!")
-dog=Dog()
-dog.eat()
+dog=Dog("Jacky")
+dog.sleep()
 
 
