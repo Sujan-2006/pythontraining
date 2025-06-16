@@ -1,25 +1,15 @@
 class Animal:
-    def __init__(self,name):
-        self.name=name
-        self.alive=True
-    def sound(self):
-        print(f"{self.name} makes sound")
+    def eat(self):
+        print("Animals eat!!")
+    
+class Mammal:
     def sleep(self):
-        print(f"{self.name} is sleeping")
-class Dog(Animal):
+        print("Mammal sleeps!!")
+
+class Dog(Animal,Mammal):
     def bark(self):
         print("wooff wooff!!")
-class Cat(Animal):
-    def meow(self):
-        print("meoowwwww!!")
-    
-dog=Dog("Jacky")
-cat=Cat("Pinky")
-
-print(dog.name)
-print(cat.alive)
-cat.sound()
-
-dog.bark()
+dog=Dog()
+dog.eat()
 
 
