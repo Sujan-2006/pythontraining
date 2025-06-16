@@ -27,9 +27,12 @@ class Pizza(Circle):
         super().__init__(radius)
         self.topping = topping
        
+class Clock(Square):
+    def __init__(self,color,side):
+        super().__init__(side)
+        self.color=color
 
-
-shapes = [Circle(3), Square(4), Triangle(5, 7),Pizza("sauce",10),]
+shapes = [Circle(3), Square(4), Triangle(5, 7),Pizza("sauce",10),Clock("white",2)]
 
 for shape in shapes:
     print(f"{shape.area()} cm^2")
