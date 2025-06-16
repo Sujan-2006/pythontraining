@@ -1,38 +1,17 @@
-from abc import ABC, abstractmethod
+class Animal:
+    alive=True
+class Dog(Animal):
+    def sound(self):
+        print("wooff!!")
+class Cat(Animal):
+    def sound(self):
+        print("meoww!!")
+class Car:        #car gets the minimm requirements ti be considered as an animal
+    alive=False
+    def sound(self):
+        print("Honk!!")    
+animals=[Dog(),Cat(),Car()]
 
-class Shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-    def area(self):
-        return 3.14 * self.radius ** 2
-
-class Square(Shape):
-    def __init__(self, side):
-        self.side = side
-    def area(self):
-        return self.side ** 2
-class Triangle(Shape):
-    def __init__(self, base, height):
-        self.base = base
-        self.height = height
-    def area(self):
-        return self.base * self.height * 0.5
-class Pizza(Circle):
-    def __init__(self, topping, radius):
-        super().__init__(radius)
-        self.topping = topping
-       
-class Clock(Square):
-    def __init__(self,color,side):
-        super().__init__(side)
-        self.color=color
-
-shapes = [Circle(3), Square(4), Triangle(5, 7),Pizza("sauce",10),Clock("white",2)]
-
-for shape in shapes:
-    print(f"{shape.area()} cm^2")
+for animal in animals:
+    animal.sound()
+    print(animal.alive)
