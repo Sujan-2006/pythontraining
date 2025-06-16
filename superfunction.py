@@ -26,7 +26,6 @@ class Square(Shape):
         print(f"It is a square with area of {self.width * self.width}cm^2")
         super().describe()
 
-
 class Triangle(Shape):
     def __init__(self, color, filled, width, height):
         super().__init__(color, filled)

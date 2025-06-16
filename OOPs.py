@@ -16,21 +16,20 @@ class Square(Shape):
         self.side = side
     def area(self):
         return self.side ** 2
-
 class Triangle(Shape):
     def __init__(self, base, height):
         self.base = base
         self.height = height
     def area(self):
         return self.base * self.height * 0.5
-
 class Pizza(Circle):
     def __init__(self, topping, radius):
         super().__init__(radius)
         self.topping = topping
        
 
-shapes = [Circle(3), Square(4), Triangle(5, 7),Pizza("sauce",10)]
+
+shapes = [Circle(3), Square(4), Triangle(5, 7),Pizza("sauce",10),]
 
 for shape in shapes:
-    print(f"{shape.area()}cm^2")
+    print(f"{shape.area()} cm^2")
