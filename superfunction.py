@@ -39,7 +39,3 @@ print(circle.color)
 print(square.width)
 print(triangle.height)
 square.describe()
-
-
-
-
