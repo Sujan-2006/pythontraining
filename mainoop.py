@@ -1,9 +1,13 @@
 class Bike:
-    def __init__(self,model,year,color,sales):
-        self.model=model
-        self.year=year
+    
+    year=2025          #class variable
+    num=0
+
+    def __init__(self,model,color,sales):
+        self.model=model          #instance variables
         self.color=color
         self.sales=sales
+        Bike.num+=1
 
     def drive(self):
         print(f"I drive the {self.color} {self.model}")
