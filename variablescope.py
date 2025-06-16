@@ -1,9 +1,9 @@
-def ex1():     #local variabl-visible and accessible within only its functo=ion
+def ex1():     #enclosed variabl search the variable in local level and if it is not available it searches in the enclosed level
     x=2
-    print(x)
-def ex2():
-    x=8
-    print(x)
+    def ex2():
+      
+        print(x)
+    ex2()
 ex1()
-ex2()
+
  
