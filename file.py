@@ -1,8 +1,10 @@
-file_path="C:/Users/Sujan/Desktop/test.txt"
+import json
+
+file_path="C:/Users/Sujan/Desktop/test.json"
 try:
     with open(file_path,"r") as file:
-        content=file.read()
-        print(content)
+        content=json.load(file)
+        print(content["s4"])
 except FileNotFoundError:
     print("that file is not found")
 except PermissionError:
