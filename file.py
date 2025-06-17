@@ -1,10 +1,11 @@
-import json
+import csv
 
-file_path="C:/Users/Sujan/Desktop/test.json"
+file_path="C:/Users/Sujan/Desktop/test.csv"
 try:
     with open(file_path,"r") as file:
-        content=json.load(file)
-        print(content["s4"])
+        content=csv.reader(file)
+        for i in content:
+            print(i[2])
 except FileNotFoundError:
     print("that file is not found")
 except PermissionError:
