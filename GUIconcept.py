@@ -1,9 +1,61 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton, QCheckBox
+from PyQt5.QtWidgets import QApplication, QMainWindow,QLabel ,QRadioButton,QButtonGroup
 from PyQt5.QtGui import QPixmap, QIcon, QFont
 from PyQt5.QtCore import Qt
 
 class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Check Box")
+        self.setGeometry(600, 150, 500, 200)
+        self.r1=QRadioButton("Konnichiwa",self)
+        self.r2=QRadioButton("Konbanwa",self)
+        self.r3=QRadioButton("Sayonara",self)
+        self.r4=QRadioButton("Ohayo",self)
+        self.r5=QRadioButton("Jaane",self)
+        self.bg1=QButtonGroup(self)
+        self.bg2=QButtonGroup(self)
+        self.initUI()
+
+    def initUI(self):
+        self.r1.setGeometry(0,0,400,100)
+        self.r2.setGeometry(0,50,400,100)
+        self.r3.setGeometry(0,100,400,100)
+        self.r4.setGeometry(0,150,400,100)
+        self.r5.setGeometry(0,200,400,100)
+
+        self.setStyleSheet("QRadioButton{"
+                           "font-size: 40px;"
+                           "font-family:Arial;"
+                           "padding: 20px;"
+                           "}")
+        self.bg1.addButton(self.r1)
+        self.bg1.addButton(self.r2)
+        self.bg1.addButton(self.r3)
+        self.bg2.addButton(self.r4)
+        self.bg2.addButton(self.r5)
+
+        self.r1.toggled.connect(self.radio_button_changed)
+        self.r2.toggled.connect(self.radio_button_changed)
+        self.r3.toggled.connect(self.radio_button_changed)
+        self.r4.toggled.connect(self.radio_button_changed)
+        self.r5.toggled.connect(self.radio_button_changed)
+
+    def radio_button_changed(self):
+        radio_button=self.sender()
+        if radio_button.isChecked():
+            print(f"{radio_button.text()} is selected")
+        
+    
+    
+    
+     
+
+
+
+    '''
+    #CHECKBOX
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Check Box")
@@ -20,7 +72,6 @@ class MainWindow(QMainWindow):
         else:
             print("I don't like Cars")
 
-'''
 #BUTTONS
     def initUI(self):
         
