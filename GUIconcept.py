@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication,QMainWindow,QLabel
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
@@ -8,10 +9,21 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Anime wa kakkoii!!")
-        self.setGeometry(100,100,400,400)
-        self.setWindowIcon(QIcon("img"))
+        self.setGeometry(100,100,300,300)
+        self.setWindowIcon(QIcon("img.jpg"))
 
+    
+        label=QLabel(self)
+        label.setGeometry(0,0,400,100)
+        pixmap=QPixmap("imp.jpg")
+        label.setPixmap(pixmap)
+        label.setScaledContents(True)
+        label.setGeometry((self.width()-label.width())//2,
+                          (self.height()-label.height())//2,
+                          label.width(),
+                          label.height())
 
+'''
         label=QLabel("Hello",self)
         label.setFont(QFont("Arial",20))
         label.setGeometry(0,0,400,100)
@@ -28,10 +40,8 @@ class MainWindow(QMainWindow):
         #label.setAlignment(Qt.AlignLeft)
         #label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         label.setAlignment(Qt.AlignCenter)     #WE CAN ALSO USE->label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
-
-
-
-
+        '''
+        
 
 def main():
     app=QApplication(sys.argv)
