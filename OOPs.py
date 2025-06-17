@@ -1,20 +1,32 @@
 class Staff:
-    def __init__(self, name, position):
+
+    count=0
+    tot_deg=0
+
+    def __init__(self, name, position,noof_degree):
         self.name = name
         self.position = position
+        Staff.count+=1
+        Staff.tot_deg+=noof_degree
 
+
+#INSTANCE METHOD
     def getinfo(self):
         return f"{self.name} = {self.position}"
 
-    @staticmethod
-    def isvalid(position):
-        valid = ["HOD", "Teacher", "Professor", "FS"]
-        return position in valid
+    @classmethod
+    def getcount(cls):   #here we use cls
+        return f"Total number of Staffs: {cls.count}"
     
-s1=Staff("Shakila","Teacher")
-s2=Staff("Bashir","Professor")
-s3=Staff("shanthini","HOD")
+    @classmethod
+    def get_noofdegree(cls):
+        return f"Average no. of degree of all the staffs: {cls.tot_deg/cls.count}"
+    
+s1=Staff("Shakila","Teacher",3)
+s2=Staff("Bashir","Professor",4)
+s3=Staff("shanthini","HOD",5)
 
-print(Staff.isvalid("teacher"))
-print(s1.getinfo())
-print(s2.getinfo())
+print(Staff.getcount())
+
+print(Staff.get_noofdegree())
+
