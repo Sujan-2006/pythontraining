@@ -29,14 +29,14 @@ class MainWindow(QMainWindow):
         l4.setStyleSheet("Background-color:blue;")
         l5.setStyleSheet("Background-color:orange;")
 
-        hbox=QHBoxLayout()    #vbox -> to print vertically
-        hbox.addWidget(l1) 
-        hbox.addWidget(l2)
-        hbox.addWidget(l3)
-        hbox.addWidget(l4)
-        hbox.addWidget(l5)
+        grid=QGridLayout()    #vbox -> to print vertically
+        grid.addWidget(l1,3,0) 
+        grid.addWidget(l2,1,0)
+        grid.addWidget(l3,1,1)
+        grid.addWidget(l4,0,1)
+        grid.addWidget(l5,2,2)
 
-        central_widget.setLayout(hbox)
+        central_widget.setLayout(grid)
 
 
         '''
