@@ -1,17 +1,20 @@
-class Animal:
-    alive=True
-class Dog(Animal):
-    def sound(self):
-        print("wooff!!")
-class Cat(Animal):
-    def sound(self):
-        print("meoww!!")
-class Car:        #car gets the minimm requirements ti be considered as an animal
-    alive=False
-    def sound(self):
-        print("Honk!!")    
-animals=[Dog(),Cat(),Car()]
+class Staff:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
 
-for animal in animals:
-    animal.sound()
-    print(animal.alive)
+    def getinfo(self):
+        return f"{self.name} = {self.position}"
+
+    @staticmethod
+    def isvalid(position):
+        valid = ["HOD", "Teacher", "Professor", "FS"]
+        return position in valid
+    
+s1=Staff("Shakila","Teacher")
+s2=Staff("Bashir","Professor")
+s3=Staff("shanthini","HOD")
+
+print(Staff.isvalid("teacher"))
+print(s1.getinfo())
+print(s2.getinfo())
