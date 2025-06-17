@@ -1,12 +1,18 @@
 
-import json
+import csv
 
 txt_data="I like pizza"
-students={"s1":"naruto","s2":"sasuke","s3":"sakura","s4":"kakashi"}
-file_path="C:/Users/Sujan/Desktop/test.json"
+students=[["name","age","gender"],
+          ["SUJAN",19,"male"],
+          ["MATHEW",20,"male"],
+          ["RESHMA",19,"female"],
+          ["VIDULA",18,"female"]]
+file_path="C:/Users/Sujan/Desktop/test.csv"
 try:
-    with open(file_path,"w") as file:            #To write an unexisted file
-        json.dump(students,file,indent=4)                  #a-> to append an existing file
-        print(f"json file '{file_path}' is created")
+    with open(file_path,"w",newline="") as file:            #To write an unexisted file
+        writer=csv.writer(file)          
+        for row in students:
+            writer.writerow(row)        #a-> to append an existing file
+        print(f"csv file '{file_path}' is created")
 except FileExistsError:
     print("that file already exists")
