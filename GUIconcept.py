@@ -1,18 +1,27 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton, QCheckBox
 from PyQt5.QtGui import QPixmap, QIcon, QFont
 from PyQt5.QtCore import Qt
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Buttons")
-        self.setGeometry(600,150,300,150)
-        self.button=QPushButton("Click Me!!",self)
-        self.label=QLabel("Hello",self)
-        self.setWindowIcon(QIcon("img.jpg"))
-        self.initUI()
+        self.setWindowTitle("Check Box")
+        self.setGeometry(600, 150, 500, 200)
+        self.checkbox = QCheckBox("Do you like Cars?", self)
+        self.checkbox.setGeometry(10, 30, 400, 60)
+        self.checkbox.setStyleSheet("font-size: 30px; font-family: Arial;")
+        self.checkbox.setChecked(False)
+        self.checkbox.stateChanged.connect(self.checkbox_changed)
 
+    def checkbox_changed(self, state):
+        if state == Qt.Checked:
+            print("I like cars")
+        else:
+            print("I don't like Cars")
+
+'''
+#BUTTONS
     def initUI(self):
         
         self.button.setGeometry(150,200,200,100)
@@ -27,10 +36,6 @@ class MainWindow(QMainWindow):
         #self.button.setText("Clicked")
         #self.button.setDisabled(True)
        
-
-
-
-        '''
         #LAYOUT MANAGER
 
     def initUI(self):
