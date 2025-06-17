@@ -1,17 +1,37 @@
 import sys
-from PyQt5.QtWidgets import (QApplication,QMainWindow,QLabel,QWidget,QVBoxLayout,QHBoxLayout,QGridLayout)
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtGui import QIcon
-from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton
+from PyQt5.QtGui import QPixmap, QIcon, QFont
 from PyQt5.QtCore import Qt
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Layout Managers")
-        self.setGeometry(100,100,300,300)
+        self.setWindowTitle("Buttons")
+        self.setGeometry(600,150,300,150)
+        self.button=QPushButton("Click Me!!",self)
+        self.label=QLabel("Hello",self)
         self.setWindowIcon(QIcon("img.jpg"))
         self.initUI()
+
+    def initUI(self):
+        
+        self.button.setGeometry(150,200,200,100)
+        self.button.setStyleSheet("font-size: 30px;")
+        self.button.clicked.connect(self.on_click)
+        self.label.setGeometry(150,300,150,100)
+        self.label.setStyleSheet("font-size:50 px;")
+
+    def on_click(self):
+        print("You pressed me!")
+        self.label.setText("Konnochiwa!")
+        #self.button.setText("Clicked")
+        #self.button.setDisabled(True)
+       
+
+
+
+        '''
+        #LAYOUT MANAGER
 
     def initUI(self):
         central_widget=QWidget()
@@ -38,8 +58,6 @@ class MainWindow(QMainWindow):
 
         central_widget.setLayout(grid)
 
-
-        '''
     #IMAGES
         label=QLabel(self)
         label.setGeometry(0,0,400,100)
