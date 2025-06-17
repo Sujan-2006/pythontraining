@@ -1,11 +1,10 @@
-import os
-
-file="File1/test1.txt"    #C:/Users/Sujan/Desktop
-if os.path.exists(file):
-    print(f"the location '{file}' exists")
-    if os.path.isfile(file):
-        print("that is a file")
-    elif os.path.isdir(file):
-        print("that is a directory")
-else:
-    print("that location doesn't exists")
+txt_data="I like pizza"
+students=["naruto","sasuke","sakura","kakashi"]
+file_path="C:/Users/Sujan/Desktop/test.txt"
+try:
+    with open(file_path,"w") as file:            #To write an unexisted file
+        for student in students:
+            file.write(student+"\n")                   #a-> to append an existing file
+        print(f"txt file '{file_path}' is created")
+except FileExistsError:
+    print("that file already exists")
