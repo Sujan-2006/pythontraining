@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow,QLabel ,QRadioButton,QButtonGroup
+from PyQt5.QtWidgets import QApplication, QMainWindow,QLineEdit,QPushButton
 from PyQt5.QtGui import QPixmap, QIcon, QFont
 from PyQt5.QtCore import Qt
 
@@ -8,6 +8,40 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Check Box")
         self.setGeometry(600, 150, 500, 200)
+        self.lineedit=QLineEdit(self)
+        self.button=QPushButton("SUBMIT",self)
+        self.initUI()
+    
+    def initUI(self):
+        self.lineedit.setGeometry(10,10,250,40)
+        self.lineedit.setStyleSheet("font-size:30px;"
+                                    "font-family:Arial")
+        self.button.setGeometry(200,10,150,40)
+        self.button.setStyleSheet("font-size:30px;"
+                                    "font-family:Arial")
+        self.lineedit.setPlaceholderText("Enter your fav. ANIME")
+        self.button.clicked.connect(self.submit)
+    def submit(self):
+        txt=self.lineedit.text()
+        print(f"My favourite anime is {txt}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        '''
+        #RADIOBUTTON 
+
         self.r1=QRadioButton("Konnichiwa",self)
         self.r2=QRadioButton("Konbanwa",self)
         self.r3=QRadioButton("Sayonara",self)
@@ -15,7 +49,7 @@ class MainWindow(QMainWindow):
         self.r5=QRadioButton("Jaane",self)
         self.bg1=QButtonGroup(self)
         self.bg2=QButtonGroup(self)
-        self.initUI()
+    
 
     def initUI(self):
         self.r1.setGeometry(0,0,400,100)
@@ -44,16 +78,9 @@ class MainWindow(QMainWindow):
     def radio_button_changed(self):
         radio_button=self.sender()
         if radio_button.isChecked():
-            print(f"{radio_button.text()} is selected")
-        
-    
-    
-    
-     
+            print(f"{radio_button.text()} is selected"
 
 
-
-    '''
     #CHECKBOX
 
     def __init__(self):
