@@ -60,7 +60,7 @@ class WeatherApp(QWidget):
                            }
                            QLabel#emoji_l{
                            font-size:100px;
-                           font-family:segeo UI emoji;
+                           font-family:'segoe UI emoji';
                            }
                            QLabel#descrp_l{
                            font-size:60px;
@@ -158,7 +158,7 @@ class WeatherApp(QWidget):
             return ""
 
 
-    
+
 if __name__=="__main__":
     app=QApplication(sys.argv)
     wa=WeatherApp()
